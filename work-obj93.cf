@@ -1,33 +1,69 @@
 v 3
-file . "mem.vhd" "20220314152850.000" "20220316152815.053":
-  entity imem at 5( 86) + 0 on 138;
-  architecture behave of imem at 12( 313) + 0 on 139;
-  entity inst_mem at 64( 1873) + 0 on 140;
-  architecture arch_inst_mem of inst_mem at 76( 2083) + 0 on 141;
-  entity dmem at 87( 2296) + 0 on 142;
-  architecture behave of dmem at 96( 2558) + 0 on 143;
-  entity data_mem at 119( 3137) + 0 on 144;
-  architecture arch_data_mem of data_mem at 133( 3379) + 0 on 145;
-file . "combi.vhd" "20220314152850.000" "20220316152815.054":
-  entity fulladd1b at 6( 100) + 0 on 146;
-  architecture arche_full_add of fulladd1b at 17( 276) + 0 on 147;
-  entity addcomplex at 24( 427) + 0 on 148;
-  architecture arch_add_complex of addcomplex at 36( 679) + 0 on 149;
-  entity alu at 54( 1054) + 0 on 150;
-  architecture arch_alu of alu at 70( 1389) + 0 on 151;
-  entity extension at 108( 2320) + 0 on 152;
-  architecture arch_ext of extension at 120( 2577) + 0 on 153;
-file . "reg_bank.vhd" "20220314152850.000" "20220316152815.055":
-  package bus_mux_pkg at 1( 0) + 0 on 154;
-  entity reg32 at 13( 307) + 0 on 155;
-  architecture arch_reg of reg32 at 25( 547) + 0 on 156;
-  entity reg4 at 47( 1031) + 0 on 157;
-  architecture arch_reg of reg4 at 59( 1268) + 0 on 158;
-  entity registerbank at 82( 1704) + 0 on 159;
-  architecture arch_reg_bank of registerbank at 103( 2244) + 0 on 160;
-file . "etages.vhd" "20220316140416.000" "20220316152815.055":
-  entity etagefe at 5( 64) + 0 on 161;
-  architecture etagefe_arch of etagefe at 17( 342) + 0 on 162;
-file . "etages_tb.vhd" "20220316142808.000" "20220316152815.055":
-  entity etages_tb at 1( 0) + 0 on 163;
-  architecture test of etages_tb at 8( 120) + 0 on 164;
+file . "test_bench.vhd" "20220423171914.000" "20220423203811.606":
+  entity cpu_tb at 1( 0) + 0 on 426;
+  architecture cpu_test of cpu_tb at 8( 107) + 0 on 427;
+  entity etage_fe_tb at 37( 741) + 0 on 428;
+  architecture fe_test of etage_fe_tb at 44( 853) + 0 on 429;
+  entity etage_de_tb at 100( 2786) + 0 on 430;
+  architecture de_test of etage_de_tb at 107( 2898) + 0 on 431;
+  entity etage_ex_tb at 169( 4718) + 0 on 432;
+  architecture ex_test of etage_ex_tb at 176( 4830) + 0 on 433;
+  entity etage_me_tb at 224( 6443) + 0 on 434;
+  architecture me_test of etage_me_tb at 231( 6555) + 0 on 435;
+  entity etage_er_tb at 281( 7981) + 0 on 436;
+  architecture er_test of etage_er_tb at 288( 8093) + 0 on 437;
+file . "final.vhd" "20220423171944.000" "20220423203811.605":
+  entity cpu at 1( 0) + 0 on 424;
+  architecture cpu_arch of cpu at 11( 152) + 0 on 425;
+file . "proc.vhd" "20220423183808.000" "20220423203811.604":
+  entity datapath at 5( 80) + 0 on 416;
+  architecture datapath_arch of datapath at 19( 581) + 0 on 417;
+  entity control_unit at 249( 5366) + 0 on 418;
+  architecture control_unit_arch of control_unit at 262( 5713) + 0 on 419;
+  entity cond_unit at 378( 10364) + 0 on 420;
+  architecture cond_unit_arch of cond_unit at 391( 10653) + 0 on 421;
+  entity alea_unit at 426( 11728) + 0 on 422;
+  architecture alea_unit_arch of alea_unit at 439( 12133) + 0 on 423;
+file . "etages.vhd" "20220423125258.000" "20220423203811.603":
+  entity etagefe at 5( 64) + 0 on 406;
+  architecture etagefe_arch of etagefe at 17( 342) + 0 on 407;
+  entity etagede at 62( 1254) + 0 on 408;
+  architecture etagede_arch of etagede at 77( 1679) + 0 on 409;
+  entity etageex at 120( 2593) + 0 on 410;
+  architecture etageex_arch of etageex at 135( 3058) + 0 on 411;
+  entity etageme at 176( 3877) + 0 on 412;
+  architecture etageme_arch of etageme at 190( 4253) + 0 on 413;
+  entity etageer at 214( 4623) + 0 on 414;
+  architecture etageer_arch of etageer at 228( 4977) + 0 on 415;
+file . "mem.vhd" "20220314152850.000" "20220423203811.602":
+  entity imem at 5( 86) + 0 on 398;
+  architecture behave of imem at 12( 313) + 0 on 399;
+  entity inst_mem at 64( 1873) + 0 on 400;
+  architecture arch_inst_mem of inst_mem at 76( 2083) + 0 on 401;
+  entity dmem at 87( 2296) + 0 on 402;
+  architecture behave of dmem at 96( 2558) + 0 on 403;
+  entity data_mem at 119( 3137) + 0 on 404;
+  architecture arch_data_mem of data_mem at 133( 3379) + 0 on 405;
+file . "reg_bank.vhd" "20220423162234.000" "20220423203811.601":
+  package bus_mux_pkg at 1( 0) + 0 on 385;
+  entity reg32 at 13( 291) + 0 on 386;
+  architecture arch_reg of reg32 at 25( 531) + 0 on 387;
+  entity reg32sync at 47( 1003) + 0 on 388;
+  architecture arch_reg_sync of reg32sync at 59( 1247) + 0 on 389;
+  entity reg4 at 80( 1724) + 0 on 390;
+  architecture arch_reg of reg4 at 92( 1961) + 0 on 391;
+  entity reg2 at 114( 2428) + 0 on 392;
+  architecture arch_reg of reg2 at 126( 2665) + 0 on 393;
+  entity reg1 at 148( 3131) + 0 on 394;
+  architecture arch_reg of reg1 at 160( 3330) + 0 on 395;
+  entity registerbank at 182( 3726) + 0 on 396;
+  architecture arch_reg_bank of registerbank at 200( 4269) + 0 on 397;
+file . "combi.vhd" "20220330114930.000" "20220423203811.600":
+  entity fulladd1b at 6( 100) + 0 on 377;
+  architecture arche_full_add of fulladd1b at 17( 276) + 0 on 378;
+  entity addcomplex at 24( 427) + 0 on 379;
+  architecture arch_add_complex of addcomplex at 36( 679) + 0 on 380;
+  entity alu at 54( 1054) + 0 on 381;
+  architecture arch_alu of alu at 70( 1377) + 0 on 382;
+  entity extension at 108( 2308) + 0 on 383;
+  architecture arch_ext of extension at 120( 2565) + 0 on 384;
